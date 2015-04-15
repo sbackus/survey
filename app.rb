@@ -12,6 +12,8 @@ get '/form' do
 end
 
 post '/form' do
+	#TODO: saving to a file like this doesn't work on Heroku. 
+	#Need to do something else with the data.
    file = File.open('data.txt', 'a')
    file.puts params[:message]
   "You said '#{params[:message]}'"
